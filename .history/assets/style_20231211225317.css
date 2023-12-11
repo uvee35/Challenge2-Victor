@@ -1,0 +1,120 @@
+:root {
+  --primary-color: #edeef3;
+  --secondary-color: #0e0e0e;
+  --accent-color: #edf2f4;
+  --font-color: #f6f6f6;
+  --font-family: 'Orbitron', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--font-color);
+  background-color: var(--primary-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #0e0e0e;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.nav__item {
+  margin: 0 1rem;
+}
+
+.nav__link {
+  color: var(--font-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.hero-banner {
+  padding: 1rem;
+  text-align: center;
+  background-color: #0e0e0e;
+}
+
+.hero-banner__content {
+  max-width: 90%; /* Adjusted from 600px to 90% */
+  margin: auto;
+  background-image: url(..//assets/background.png);
+  background-size: cover;
+  background-position: center;
+  padding: 0.5rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  width: 90%; /* Adjusted from 80% to 90% */
+  max-width: 95%; /* Adjusted from 1200px to 95% */
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+/* Other existing styles remain unchanged */
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .project {
+    width: calc(50% - 1rem);
+  }
+
+  .project--featured {
+    width: calc(66.666% - 1rem);
+  }
+
+  .about-box {
+    width: 90%; /* Adjusted from 100% to 90% */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav__item {
+    margin-bottom: 0.5rem;
+  }
+
+  .project,
+  .project--featured {
+    width: 100%;
+  }
+
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-title {
+    margin: 0 0 1rem 0;
+  }
+}

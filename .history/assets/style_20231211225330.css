@@ -1,0 +1,106 @@
+:root {
+  --primary-color: #edeef3;
+  --secondary-color: #0e0e0e;
+  --accent-color: #edf2f4;
+  --font-color: #f6f6f6;
+  --font-family: 'Orbitron', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--font-color);
+  background-color: var(--primary-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  gap: 2rem; /* Space between nav items */
+  padding: 0;
+  margin: 0;
+}
+
+.nav__link {
+  color: var(--font-color);
+  text-decoration: none;
+  font-size: 1rem; /* Responsive font size */
+}
+
+.hero-banner {
+  background: url('../assets/background.png') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh 0; /* Responsive padding */
+  color: var(--font-color);
+}
+
+.about-section {
+  padding: 4vh 0; /* Responsive vertical padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-title, .work__title, .footer__title {
+  font-size: 1.5rem; /* Responsive font size */
+  margin-bottom: 1rem; /* Space below the title */
+}
+
+.about-box, .work__projects, .footer__contact-info {
+  width: 90%; /* Responsive width */
+  max-width: 1200px; /* Max width for larger screens */
+  margin: auto; /* Center align */
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  padding: 2rem; /* Padding inside the box */
+  border-radius: 15px; /* Rounded corners */
+}
+
+.project, .footer__link {
+  /* Styling for projects and footer links */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .nav__list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project, .footer__link {
+    /* Adjustments for tablet view */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-banner, .about-section, .work__projects, .footer__contact-info {
+    padding: 3vh 0; /* Less padding on smaller screens */
+  }
+
+  .about-title, .work__title, .footer__title {
+    font-size: 1.2rem; /* Smaller font size */
+  }
+
+  .project, .footer__link {
+    /* Adjustments for mobile view */
+  }
+}
