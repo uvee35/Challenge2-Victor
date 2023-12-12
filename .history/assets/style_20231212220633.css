@@ -27,7 +27,21 @@ body {
 .project {
   overflow: hidden;
 }
+/* Work section header */
+.work-section-header {
+  background: url('path-to-your-background-image.jpg') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  padding: 2rem 0; /* Adjust the padding to increase or decrease the space */
+}
 
+.work-section-header h2 {
+  font-size: 3rem; /* Adjust the size of the heading */
+  color: #ffffff; /* Adjust the color of the heading */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  /* Add more styling as needed */
+}
 
 
 .project:hover .work__image {
@@ -122,7 +136,6 @@ body {
   color: var(--font-color);
   font-size: 1.5rem;
   margin-right: 2rem;
-  
 }
 
 .about-box {
@@ -135,57 +148,31 @@ body {
   text-align: justify;
   font-family: Arial, Helvetica, sans-serif;
 }
-.project--featured {
-  max-width: 600px;
-  margin: auto;
-  grid-column: 1 / -1; 
-}
-.section-title{
-  background-color: #0e0e0e;
+
+.work__projects {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
 }
 
-
 .project {
-  background-color: transparent;
+  background-color: var(--secondary-color);
   padding: 1rem;
   width: calc(33.333% - 1rem);
   margin-bottom: 1rem;
-  grid-template-columns: repeat(2, 1fr); /* Two columns layout for the underneath images */
-  gap: 2rem;
-  
 }
 
+.project--featured {
+  max-width: 500px;
+  margin: auto;
+}
 
 .project img {
-  max-width: 500px;
+  max-width: 100%;
   height: auto;
-  border: -10px solid var(--accent-color);
+  border: 3px solid var(--accent-color);
 }
-.work__projects {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr); /* One column layout for the top image */
-  gap: 1rem;
-  background-image: url(../assets/background.png);
-}
-.project--featured {
-  grid-column: 1 / -1; /* Make the featured project span full width */
-}
-
-
-.project-row {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  
-}
-
-.project-description {
-  text-align: center;
-  padding-top: 0.5rem; /* Space between image and description text */
-}
-
 
 .footer {
   background-color: var(--secondary-color);
@@ -214,8 +201,33 @@ body {
   font-size: 2rem;
   color: var(--accent-color);
 }
+.work__projects {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* One column layout for the top image */
+  gap: 1rem;
+  background-image: url(../assets/background.png);
+}
 
+.project--featured {
+  grid-column: 1 / -1; /* Make the featured project span full width */
+}
 
+.project {
+  
+  grid-template-columns: repeat(2, 1fr); /* Two columns layout for the underneath images */
+  gap: 2rem;
+}
+.project-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  
+}
+
+.project-description {
+  text-align: center;
+  padding-top: 0.5rem; /* Space between image and description text */
+}
 
 @media (max-width: 768px) {
   .work__projects {
@@ -297,16 +309,5 @@ body {
 
   .social-icon {
     font-size: 2.5rem;
-  }
-  
-}
-@media (max-width: 768px) {
-  .project-row {
-    flex-direction: column;
-  }
-
-  .project {
-    width: 100%; /* Each project takes full width */
-    margin: 5px 0; /* Only vertical margin */
   }
 }

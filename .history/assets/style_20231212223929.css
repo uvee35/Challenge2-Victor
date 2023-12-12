@@ -298,15 +298,4 @@ body {
   .social-icon {
     font-size: 2.5rem;
   }
-  
-}
-@media (max-width: 768px) {
-  .project-row {
-    flex-direction: column;
-  }
-
-  .project {
-    width: 100%; /* Each project takes full width */
-    margin: 5px 0; /* Only vertical margin */
-  }
 }

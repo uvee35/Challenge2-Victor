@@ -122,7 +122,6 @@ body {
   color: var(--font-color);
   font-size: 1.5rem;
   margin-right: 2rem;
-  
 }
 
 .about-box {
@@ -136,33 +135,34 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 .project--featured {
-  max-width: 600px;
+  max-width: 500px;
   margin: auto;
   grid-column: 1 / -1; 
+  
+
 }
-.section-title{
-  background-color: #0e0e0e;
-  display: flex;
-  justify-content: center;
-}
+
 
 
 .project {
-  background-color: transparent;
-  padding: 1rem;
-  width: calc(33.333% - 1rem);
-  margin-bottom: 1rem;
-  grid-template-columns: repeat(2, 1fr); /* Two columns layout for the underneath images */
-  gap: 2rem;
-  
+  /* Assuming .project is the container of your image */
+  text-align: center; /* Center inline elements like images */
+  display: flex; /* Enables flexbox */
+  justify-content: center; /* Center children horizontally */
+  align-items: center; /* Center children vertically */
+  overflow: hidden; /* Prevents content from spilling out */
+  border: 3px solid black; /* Optional border */
+  /* Set specific width and height as needed */
+  width: 300px; /* Adjust to fit your layout */
+  height: 500px; /* Adjust to fit your layout */
 }
-
 
 .project img {
-  max-width: 500px;
-  height: auto;
-  border: -10px solid var(--accent-color);
+  max-width: 500%; /* Image can be at most 100% of its container */
+  max-height: 500%; /* Image can be at most 100% of its container */
+  height: auto; /* Maintain aspect ratio */
 }
+
 .work__projects {
   display: grid;
   grid-template-columns: repeat(1, 1fr); /* One column layout for the top image */
@@ -297,16 +297,5 @@ body {
 
   .social-icon {
     font-size: 2.5rem;
-  }
-  
-}
-@media (max-width: 768px) {
-  .project-row {
-    flex-direction: column;
-  }
-
-  .project {
-    width: 100%; /* Each project takes full width */
-    margin: 5px 0; /* Only vertical margin */
   }
 }

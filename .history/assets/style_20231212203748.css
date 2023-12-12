@@ -1,0 +1,278 @@
+:root {
+  --primary-color: #edeef3;
+  --secondary-color: #0e0e0e;
+  --accent-color: #edf2f4;
+  --font-color: #f6f6f6;
+  --font-family: 'Orbitron', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--font-color);
+  background-color: var(--primary-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.project {
+  /* Other styling rules for .project */
+  overflow: hidden; /* Ensures that the expanded image doesn't break the layout */
+}
+
+.project:hover .work__image {
+  transform: scale(1.05); /* Slightly enlarges the image on hover */
+  transition: transform 0.3s ease; /* Smooth transition for the transform effect */
+}
+
+
+.work__image {
+  display: block; /* Removes bottom space under the image */
+  width: 100%; /* Make the image responsive */
+  max-width: 300px; /* Maximum width the image can have */
+  min-width: 100px; /* Minimum width the image can have */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Smooth transition for the transform effect */
+  margin: 0 auto; /* Center the image within its container */
+}
+
+
+
+
+.header {
+  display: flex;
+  justify-content: center; /* This will center the navigation items */
+  align-items: center; /* This will vertically center the items if the header has a specific height */
+  padding: 1rem;
+  background-color: #0e0e0e;
+}
+
+
+.nav__list {
+  display: flex;
+  justify-content: center; /* Center the list items horizontally */
+  align-items: center; /* Center the list items vertically */
+  list-style: none;
+  padding: 0; /* Remove default padding */
+}
+
+
+.nav__item {
+  margin: 0 1rem;
+}
+
+.nav__link {
+  color: var(--font-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.hero-banner {
+  padding: 1rem; /* Reduced padding */
+  text-align: center; /* Center content */
+  background-color: #0e0e0e;
+}
+
+.hero-banner__content {
+  /* If you want to limit the width of the content area */
+  max-width: 600px; /* Adjust as needed */
+  margin: auto; /* Center the content area if max-width is set */
+  background-image: url(..//assets/background.png);
+  background-size: cover;
+  background-position: center;
+  padding: 0.5rem 0; /* Adjust the padding to resize the section */
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center-align children horizontally */
+  justify-content: center; /* Center-align children vertically */
+  border-radius: 20px; /* Add rounded corners */
+  margin: 2rem; /* Add some margin around the section */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for depth */
+  width: 80%; /* Adjust width to your liking */
+  max-width: 1200px; /* Optional: Set a max-width */
+  margin-left: auto; /* Margins auto for center alignment */
+  margin-right: auto;
+}
+
+
+.hero-banner h1 {
+  font-size: 2rem; /* Smaller font size for the main heading */
+  margin-bottom: 0.5rem; /* Adjust spacing as needed */
+  
+}
+
+
+
+
+.about__image {
+  width: 150px; /* New, smaller width */
+  height: 150px; /* New, smaller height */
+  border-radius: 50%; /* To keep the circular shape */
+  object-fit: cover; /* To maintain aspect ratio */
+}
+
+
+.about-section {
+  background-color: var(--secondary-color);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+
+.about-title {
+  color: var(--font-color);
+  font-size: 1.5rem;
+  margin-right: 2rem; /* Adjust space between title and box */
+}
+
+.about-box {
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  padding: 2rem;
+  border-radius: 10px;
+  color: var(--font-color);
+  font-size: 1rem;
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.work__projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.project {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  width: calc(33.333% - 1rem);
+  margin-bottom: 1rem;
+}
+
+.project--featured {
+  max-width: 300px; /* Set a max-width for the container */
+  margin: auto; /* Center the container */
+}
+
+.project img {
+  max-width: 100%;
+  height: auto;
+  border: 3px solid var(--accent-color);
+}
+
+.footer {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  text-align: center;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.footer__contact-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.social-icon {
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .project {
+    width: calc(50% - 1rem);
+  }
+
+  .project--featured {
+    width: calc(66.666% - 1rem);
+  }
+
+  .about-box {
+    width: 90%; /* Adjusted from 100% to 90% */
+    padding: 1rem; /* Added padding for better readability */
+  }
+
+  .footer__contact-info {
+    flex-direction: column; /* Stack contact info vertically */
+    gap: 1rem; /* Add spacing between contact info items */
+  }
+
+  .social-icon {
+    font-size: 2.5rem; /* Increased icon size for better visibility */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav__list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav__item {
+    margin-bottom: 0.5rem;
+  }
+
+  .project,
+  .project--featured {
+    width: 100%;
+  }
+
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-banner__content{
+    background-image: url(..//assets/background.png);
+  }
+
+  .about-title {
+    margin: 0 0 1rem 0;
+  }
+
+  .about-box {
+    padding: 1rem; /* Added padding for better readability */
+  }
+
+  .footer__contact-info {
+    flex-direction: column; /* Stack contact info vertically */
+    gap: 1rem; /* Add spacing between contact info items */
+  }
+
+  .social-icon {
+    font-size: 2.5rem; /* Increased icon size for better visibility */
+  }
+}@media (max-width: 768px) {
+  .work__image {
+    max-width: 150px; /* Adjust for tablet devices */
+  }
+}
+
+@media (max-width: 480px) {
+  .work__image {
+    max-width: 100px; /* Adjust for mobile devices */
+  }
+}
