@@ -24,6 +24,24 @@ body {
   min-height: 100vh;
 }
 
+.project {
+  /* Other styling rules for .project */
+  overflow: hidden; /* Ensures that the expanded image doesn't break the layout */
+}
+
+.project:hover .work__image {
+  transform: scale(1.05); /* Slightly enlarges the image on hover */
+  transition: transform 0.3s ease; /* Smooth transition for the transform effect */
+}
+
+.work__image {
+  display: block; /* Removes bottom space under the image */
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease; /* Smooth transition for the transform effect */
+}
+
+
 .header {
   display: flex;
   justify-content: center; /* This will center the navigation items */
